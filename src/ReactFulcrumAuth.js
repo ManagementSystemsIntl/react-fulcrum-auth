@@ -1,8 +1,16 @@
-var React = require('react');
+import React, {Component, PropTypes} from 'react';
 import { ControlLabel, FormGroup, FormControl, Modal, Button, Navbar } from 'react-bootstrap';
 var Fulcrum = require('fulcrum-app');
 
 class ReactFulcrumAuth extends React.Component {
+
+  static propTypes() {
+    return {
+      appName: PropTypes.string,
+      callback: PropTypes.func.isRequired
+    };
+  }
+
   constructor(props) {
     super(props);
     this.state = {

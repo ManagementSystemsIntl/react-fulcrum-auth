@@ -1,6 +1,8 @@
 # react-fulcrum-auth
 
-__COMPONENT DESCRIPTION GOES HERE__
+Add [Fulcrum](http://www.fulcrumapp.com/) authentication flow to your React app. Simply include the `<ReactFulcrumAuth />` component with `callback` and `appName` props to get a Bootstrap header with built-in authentication. Enter your Fulcrum credentials and choose an organization -- the `callback` prop returns a [Fulcrum API client](https://github.com/fulcrumapp/fulcrum-node) and name for the selected Fulcrum organization as parameters.
+
+The authorization flow for this module was adapted from that of the [Fulcrum Query Utility](https://github.com/fulcrumapp/fulcrum-query-utility).
 
 
 ## Demo & Examples
@@ -30,21 +32,29 @@ npm install react-fulcrum-auth --save
 
 ## Usage
 
-__EXPLAIN USAGE HERE__
+As mentioned above, the component expects two props, `callback` and `appName`.
+* `callback` references a method from the parent scope of this component, so that the parent can use and propagate the Fulcrum API client to other components.
+* `appName` is simply for aesthetic purposes; it updates the text in the component's `<NavBar.Brand />` link subcomponent. If no prop is passed, `appName` defaults to "Fulcrum App".
 
 ```
 var ReactFulcrumAuth = require('react-fulcrum-auth');
+...
 
-<ReactFulcrumAuth>Example</ReactFulcrumAuth>
+setFulcrum = (fulcrum, orgName) => {
+  fulcrum.forms.search({}, ...);
+  this.setState({ organization: orgName });
+  ...
+}
+
+...
+<ReactFulcrumAuth callback={ this.setFulcrum } appName={ "Cool App" }></ReactFulcrumAuth>
 ```
 
-### Properties
+This component assumes that Bootstrap css is available in the webpage. If it isn't, you can include this stylesheet in the `<head>`:
 
-* __DOCUMENT PROPERTIES HERE__
-
-### Notes
-
-__ADDITIONAL USAGE NOTES__
+```
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+```
 
 
 ## Development (`src`, `lib` and the build process)
@@ -55,7 +65,25 @@ To build, watch and serve the examples (which will also watch the component sour
 
 ## License
 
-__PUT LICENSE HERE__
+The MIT License (MIT)
 
+Copyright (c) 2014-present Stephen J. Collings, Matthew Honnibal, Pieter Vanderwerff
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
 Copyright (c) 2017 Chase Gruber.
-
