@@ -34023,18 +34023,32 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _reactBootstrap = require('react-bootstrap');
+var _react = require('react');
 
-var React = require('react');
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = require('react-bootstrap');
 
 var Fulcrum = require('fulcrum-app');
 
 var ReactFulcrumAuth = (function (_React$Component) {
   _inherits(ReactFulcrumAuth, _React$Component);
+
+  _createClass(ReactFulcrumAuth, null, [{
+    key: 'propTypes',
+    value: function propTypes() {
+      return {
+        appName: _react.PropTypes.string,
+        callback: _react.PropTypes.func.isRequired
+      };
+    }
+  }]);
 
   function ReactFulcrumAuth(props) {
     _classCallCheck(this, ReactFulcrumAuth);
@@ -34162,48 +34176,48 @@ var ReactFulcrumAuth = (function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      return React.createElement(
+      return _react2['default'].createElement(
         'div',
         null,
-        React.createElement(
+        _react2['default'].createElement(
           _reactBootstrap.Navbar,
           { collapseOnSelect: true },
-          React.createElement(
+          _react2['default'].createElement(
             _reactBootstrap.Navbar.Header,
             null,
-            React.createElement(
+            _react2['default'].createElement(
               _reactBootstrap.Navbar.Brand,
               null,
-              React.createElement(
+              _react2['default'].createElement(
                 _reactBootstrap.Navbar.Link,
                 { href: '#' },
                 this.props.appName || "Fulcrum App"
               )
             ),
-            React.createElement(_reactBootstrap.Navbar.Toggle, null)
+            _react2['default'].createElement(_reactBootstrap.Navbar.Toggle, null)
           ),
-          React.createElement(
+          _react2['default'].createElement(
             _reactBootstrap.Navbar.Collapse,
             null,
-            React.createElement(
+            _react2['default'].createElement(
               _reactBootstrap.Navbar.Text,
               { style: this.state.showLogout },
               'Logged in as ',
               this.state.username
             ),
-            React.createElement(
+            _react2['default'].createElement(
               _reactBootstrap.Navbar.Text,
               { style: this.state.showLogout, pullRight: true },
-              React.createElement(
+              _react2['default'].createElement(
                 _reactBootstrap.Navbar.Link,
                 { href: '#', onClick: this.logout },
                 'Logout'
               )
             ),
-            React.createElement(
+            _react2['default'].createElement(
               _reactBootstrap.Navbar.Text,
               { style: this.state.showLogout, pullRight: true },
-              React.createElement(
+              _react2['default'].createElement(
                 _reactBootstrap.Navbar.Link,
                 { href: '#', onClick: this.changeOrg.bind(this) },
                 'Change Org'
@@ -34211,85 +34225,85 @@ var ReactFulcrumAuth = (function (_React$Component) {
             )
           )
         ),
-        React.createElement(
+        _react2['default'].createElement(
           _reactBootstrap.Modal,
           { show: this.state.showModal },
-          React.createElement(
+          _react2['default'].createElement(
             _reactBootstrap.Modal.Header,
             null,
-            React.createElement(
+            _react2['default'].createElement(
               _reactBootstrap.Modal.Title,
               null,
               this.state.modalTitle
             )
           ),
-          React.createElement(
+          _react2['default'].createElement(
             _reactBootstrap.Modal.Body,
             null,
-            React.createElement(
+            _react2['default'].createElement(
               'form',
               { ref: 'loginForm', style: this.state.credsPickerStyle, onSubmit: function (evt) {
                   evt.preventDefault();_this.login();
                 } },
-              React.createElement(
+              _react2['default'].createElement(
                 _reactBootstrap.FormGroup,
                 null,
-                React.createElement(
+                _react2['default'].createElement(
                   _reactBootstrap.ControlLabel,
                   null,
                   'Email'
                 ),
-                React.createElement(_reactBootstrap.FormControl, { type: 'email', inputRef: function (node) {
+                _react2['default'].createElement(_reactBootstrap.FormControl, { type: 'email', inputRef: function (node) {
                     return _this.email = node;
                   } })
               ),
-              React.createElement(
+              _react2['default'].createElement(
                 _reactBootstrap.FormGroup,
                 null,
-                React.createElement(
+                _react2['default'].createElement(
                   _reactBootstrap.ControlLabel,
                   null,
                   'Password'
                 ),
-                React.createElement(_reactBootstrap.FormControl, { type: 'password', inputRef: function (node) {
+                _react2['default'].createElement(_reactBootstrap.FormControl, { type: 'password', inputRef: function (node) {
                     return _this.password = node;
                   } })
               ),
-              React.createElement(
+              _react2['default'].createElement(
                 _reactBootstrap.FormGroup,
                 null,
-                React.createElement(
+                _react2['default'].createElement(
                   _reactBootstrap.Button,
                   { type: 'submit', bsStyle: 'primary' },
                   'Sign In'
                 )
               )
             ),
-            React.createElement(
+            _react2['default'].createElement(
               'form',
               { ref: 'orgForm', style: this.state.orgPickerStyle, onSubmit: function (evt) {
                   evt.preventDefault();_this.setOrg();
                 } },
-              React.createElement(
+              _react2['default'].createElement(
                 _reactBootstrap.FormGroup,
                 null,
-                React.createElement(
+                _react2['default'].createElement(
                   _reactBootstrap.ControlLabel,
                   null,
                   'Organization'
                 ),
-                React.createElement(
+                _react2['default'].createElement(
                   _reactBootstrap.FormControl,
                   { componentClass: 'select', inputRef: function (node) {
                       return _this.fulcrum_key = node;
                     } },
-                  React.createElement(
+                  _react2['default'].createElement(
                     'option',
                     { value: '' },
                     '-- pick an org --'
                   ),
                   this.state.contexts.map(function (d) {
-                    return React.createElement(
+                    return _react2['default'].createElement(
                       'option',
                       { value: d.api_token, key: d.id },
                       d.name
@@ -34297,10 +34311,10 @@ var ReactFulcrumAuth = (function (_React$Component) {
                   })
                 )
               ),
-              React.createElement(
+              _react2['default'].createElement(
                 _reactBootstrap.FormGroup,
                 null,
-                React.createElement(
+                _react2['default'].createElement(
                   _reactBootstrap.Button,
                   { type: 'submit', bsStyle: 'primary' },
                   'Go!'
@@ -34314,7 +34328,7 @@ var ReactFulcrumAuth = (function (_React$Component) {
   }]);
 
   return ReactFulcrumAuth;
-})(React.Component);
+})(_react2['default'].Component);
 
 ;
 
