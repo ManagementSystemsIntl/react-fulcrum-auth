@@ -14,7 +14,10 @@
   ],
   "keywords": [
     "react",
-    "react-component"
+    "react-component",
+    "react-bootstrap",
+    "fulcrum",
+    "fulcrum-app"
   ],
   "license": "MIT",
   "ignore": [
