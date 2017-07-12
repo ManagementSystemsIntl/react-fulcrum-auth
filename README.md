@@ -7,7 +7,7 @@ The authorization flow for this module was adapted from that of the [Fulcrum Que
 
 ## Demo & Examples
 
-Live demo: [cpgruber.github.io/react-fulcrum-auth](http://cpgruber.github.io/react-fulcrum-auth/)
+Live demo: [ManagementSystemsIntl/react-fulcrum-auth](http://ManagementSystemsIntl.github.io/react-fulcrum-auth/)
 
 To build the examples locally, run:
 
