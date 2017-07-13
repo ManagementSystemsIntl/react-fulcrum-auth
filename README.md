@@ -1,4 +1,4 @@
-# react-fulcrum-auth
+# react-fulcrum-auth  [![npm version](https://badge.fury.io/js/react-fulcrum-auth.svg)](https://badge.fury.io/js/react-fulcrum-auth)
 
 Add [Fulcrum](http://www.fulcrumapp.com/) authentication flow to your React app. Simply include the `<ReactFulcrumAuth />` component with `callback` and `appName` props to get a Bootstrap header with built-in authentication. Enter your Fulcrum credentials and choose an organization -- the `callback` prop returns a [Fulcrum API client](https://github.com/fulcrumapp/fulcrum-node) and name for the selected Fulcrum organization as parameters.
 
