@@ -8,11 +8,11 @@ You are free to contribute to `react-fulcrum-auth` via GitHub Pull Requests.
 
 ## How to pull request
 
-1. [Fork](https://github.com/getchopstick/chopstick-boilerplate/fork) this repo.
+1. [Fork](https://github.com/ManagementSystemsIntl/react-fulcrum-auth/fork) this repo.
 2. Create a branch `git checkout -b feature--name`
 3. Commit your changes `git commit -am "New feature"`
 4. Push to the branch `git push origin feature--name`
-5. Open a [Pull Request](https://github.com/getchopstick/chopstick-boilerplate/pulls)
+5. Open a [Pull Request](https://github.com/ManagementSystemsIntl/react-fulcrum-auth/pulls)
 
 
 ## Be generous with comments
