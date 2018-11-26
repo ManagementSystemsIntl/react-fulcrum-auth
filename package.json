@@ -1,6 +1,6 @@
 {
   "name": "react-fulcrum-auth",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "react-fulcrum-auth",
   "main": "lib/ReactFulcrumAuth.js",
   "author": "Chase Gruber",
@@ -13,6 +13,7 @@
     "url": "https://github.com/cpgruber/react-fulcrum-auth/issues"
   },
   "dependencies": {
+    "browserify": "^16.2.3",
     "cached-path-relative": "^1.0.2",
     "classnames": "^2.1.2",
     "fulcrum-app": "^1.6.0",
